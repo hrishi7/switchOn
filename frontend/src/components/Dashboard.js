@@ -5,7 +5,7 @@ import React, { useEffect,useState } from "react";
 import {useSelector, useDispatch} from 'react-redux';
 
 //import redux action from redux file
-import { getDatasAction, getDatasSocketAction } from "../redux";
+import { getDatasAction, getDatasSocketAction, clearTimeStampdataAction } from "../redux";
 
 import endpoint from '../endpoint'
 
@@ -31,12 +31,15 @@ const Testing  = (props) => {
   //use to call redux action when the component load initially
   const getDatas = (obj) => dispatch(getDatasAction(obj))
 
+  const ClearData = () => dispatch(clearTimeStampdataAction())
+
   // console.log('redux state', state);
 
   // lifecycle method equivalent to componentDidMount of calss component
   useEffect(async()=>{
     //checking if not authenticated and localStorage also do not have any token then it redirect to login as this is a private dashboard page
-    if(!state.isAuthenticated && !localStorage.getItem('token')){
+    if(!state.isAuthenticated){
+      ClearData();
       window.location.href = '/login';
     }
 

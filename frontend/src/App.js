@@ -6,7 +6,9 @@ import {Provider} from 'react-redux'
 import {store} from './redux';
 
 //react router dom for routing purpose
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
+
+import PrivateRoute from './PrivateRoute';
 
 //import all the require components
 import Register from './components/Register'
@@ -23,7 +25,14 @@ function App() {
         <Navbar/>
       <Route exact path="/register" component={Register} />
       <Route exact path="/login" component={Login} />
-      <Route exact path="/" component={Dashboard} />
+      {/* <Route exact path="/" component={Dashboard} /> */}
+      <Switch>
+      <PrivateRoute
+                  exact
+                  path="/"
+                  component={Dashboard}
+                />
+      </Switch>
       </div>
       </Router>
     </Provider>

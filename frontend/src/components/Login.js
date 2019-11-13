@@ -37,11 +37,11 @@ const Login = (props) => {
     // lifecycle method equivalent to componentDidMount of calss component
     useEffect(()=>{
       //checking if the token is present in localStorage or not
-      if(localStorage.getItem('token')){
+      if(state.isAuthenticated){
         //if token is present then go to Dashbiard
         props.history.push('/');
       }
-    },[state.user,props.history])
+    },[state.user,props.history,state.isAuthenticated])
 
     //calling redux action using dispatch hook
     const loginUser = (data) => dispatch(loginUserAction(data))

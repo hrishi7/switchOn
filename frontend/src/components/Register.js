@@ -35,11 +35,11 @@ const Register = (props) => {
     // lifecycle method equivalent to componentDidMount of calss component
     useEffect(()=>{
       //checking if the token is present in localStorage or not
-      if(state.isAuthenticated || localStorage.getItem('token')){
+      if(state.isAuthenticated){
         //if token is present or redux state is true then go to Dashbiard
         props.history.push('/');
       }
-    },[state.user])
+    },[state.user,props.history,state.isAuthenticated])
 
     //calling redux action using dispatch hook
     const registerUser = (data) => dispatch(registerUserAction(data))
