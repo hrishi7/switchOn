@@ -1,0 +1,89 @@
+
+  ul.todo-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  ul.todo-list li {
+    margin: 10px 0;
+  }
+  span.complete {
+    text-decoration: line-through;
+  }
+  span.delete-button {
+    background-color: red;
+    color: white;
+    padding: 3px;
+    float: right;
+  }
+  span.delete-button:hover {
+    cursor: pointer;
+  }
+  .form-div {
+    text-align: center;
+  }
+  .form-div input {
+    width: 250px;
+  }
+
+  .navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    bottom:50;
+    width: 100%;
+  }
+
+  .navbar a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .navbar a:hover {
+    background: #ddd;
+    color: black;
+  }
+  .form{
+    margin-top: 50px;
+      width: 200px;
+      height: 200px;
+
+      position:absolute; /*it can be fixed too*/
+      left:0; right:0;
+      top:0; bottom:0;
+      margin:auto;
+
+      /*this to solve "the content will not be cut when the window is smaller than the content": */
+      max-width:100%;
+      max-height:100%;
+      overflow:auto;
+  }
+
+  input[type=text], input[type=email] select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
