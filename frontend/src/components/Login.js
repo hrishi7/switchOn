@@ -64,7 +64,8 @@ const Login = (props) => {
     }
   return (
     <div className="form">
-       <form onSubmit={handleSubmit}>
+      <center><h2>Login</h2></center>
+       <form onSubmit={handleSubmit} className="card" >
     <input type="text" name="email"  placeholder="enter email" value={email} onChange={handleChange}/>
     <input type="text" name="password" placeholder="enter password" value={password}  onChange={handleChange}/>
     <input type="submit" value="Login" onClick={handleSubmit}/>

@@ -103,12 +103,14 @@ const Testing  = (props) => {
  },[state.user])
 
     return (
-        <div style={{ textAlign: "center", marginTop:'50px' }}>
-                <div>
+        <div style={{ textAlign: "center", marginTop:'50px', }} className="main-card">
+                <div className="card">
+                  <div className="container">
                   Time elapsed
                   <p>{state.timestamp? state.timestamp.timeelapsed + " document gets insereted":'loading'}</p>
                   <p> {state.timestamp ? "Random Value: "+state.timestamp.value:'' } </p>
                   </div>
+                </div>
         </div>
     );
 
